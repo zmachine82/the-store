@@ -11,12 +11,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { ProductListComponent } from './product-list/product-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}

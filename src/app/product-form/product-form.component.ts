@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from '../product';
+import { HttpClient } from "@angular/common/http";
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-form',
@@ -17,11 +19,20 @@ export class ProductFormComponent implements OnInit {
     image: new FormControl<string>('')
   })
 
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) {
+
+
+  }
+
   ngOnInit() {
+
   }
 
   submitForm() {
-    console.log(this.newProductForm.value as Product)
+
+    this.productService.addProduct(this.newProductForm.value as Product)
 
   }
 
