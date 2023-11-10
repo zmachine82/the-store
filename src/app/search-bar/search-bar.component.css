@@ -1,0 +1,13 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+input {
+  background-color: white;
+  border-radius: 5px;
+  height: 32px;
+  min-width: 250px;
+}

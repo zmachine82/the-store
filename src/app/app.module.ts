@@ -15,14 +15,16 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SignInComponent } from './sign-in/sign-in.component'
 import { AuthInterceptor } from './auth.interceptor';
-
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProductFormComponent,
     ProductListComponent,
-    SignInComponent
+    SignInComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { AuthInterceptor } from './auth.interceptor';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}},

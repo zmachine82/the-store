@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Product } from '../product';
+import { FirebaseProduct } from '../product';
 import { HttpClient } from "@angular/common/http";
 import { ProductService } from '../product.service';
 
@@ -19,8 +19,6 @@ export class ProductFormComponent implements OnInit {
     image: new FormControl<string>('')
   })
 
-  products: Product[] = [];
-
   constructor(private productService: ProductService) {
 
 
@@ -32,7 +30,7 @@ export class ProductFormComponent implements OnInit {
 
   submitForm() {
 
-    this.productService.addProduct(this.newProductForm.value as Product)
+    this.productService.addProduct(this.newProductForm.value as FirebaseProduct)
 
   }
 
